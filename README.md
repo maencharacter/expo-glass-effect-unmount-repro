@@ -3,9 +3,9 @@
 Minimal reproduction for `expo-glass-effect` on iOS.
 
 A `GlassView` inside a parent that fades in from opacity 0 to 1 shows its glass.
-Once the app unmounts any other React Native view, the same `GlassView` draws no glass at all.
+After the steps below, which unmount another React Native view, the same `GlassView` draws no glass at all.
 Its children render over sharp, unblurred content.
-This lasts until the app is relaunched.
+In this app the state lasts until a relaunch.
 
 ## Environment
 
@@ -32,7 +32,8 @@ Expected: the panel shows glass, as in step 1.
 
 Actual: the panel draws no glass. Its two rows sit on top of sharp text.
 Every later fade-in fails the same way.
-Mounting the box again does not help.
+
+The order matters. If you unmount the box before the panel's first open, the fade-in panel keeps its glass, and unmounting the box again later in that session does not break it either.
 
 ## Screenshots
 
