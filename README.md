@@ -34,6 +34,15 @@ Actual: the panel draws no glass. Its two rows sit on top of sharp text.
 Every later fade-in fails the same way.
 Mounting the box again does not help.
 
+## Screenshots
+
+iPhone 17 Pro simulator with iOS 27.0, all in one app session. The panel's first line names the setting.
+
+| Fades in, before step 3 | Fades in, after step 3 | No fade, after step 3 |
+| --- | --- | --- |
+| ![Fade-in panel before the unmount, with glass](screenshots/1-fade-in-before-unmount.png) | ![Fade-in panel after the unmount, without glass](screenshots/2-fade-in-after-unmount.png) | ![No-fade panel after the unmount, with glass](screenshots/3-no-fade-after-unmount.png) |
+| Glass | No glass | Glass |
+
 ## What changes the result
 
 All in the same app session, after step 3:

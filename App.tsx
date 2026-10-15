@@ -46,7 +46,10 @@ export default function App() {
 
 /** A GlassView whose ancestor's opacity animates from 0 to 1, or stays at 1. */
 function Panel({ fade, rows, onClose }: { fade: boolean; rows: boolean; onClose: () => void }) {
-  const lines = [fade ? 'Faded in' : 'No fade', 'Tap anywhere to close'];
+  const lines = [
+    `${fade ? 'Faded in' : 'No fade'}, ${rows ? 'rows' : 'plain Text'}`,
+    'Tap anywhere to close',
+  ];
   const opacity = useRef(new Animated.Value(fade ? 0 : 1)).current;
   const started = useRef(false);
   if (fade && !started.current) {
