@@ -25,7 +25,7 @@ export default function App() {
         </Pressable>
         <Pressable style={styles.outline} onPress={() => setRows(value => !value)}>
           <Text style={styles.outlineText}>
-            Panel content: {rows ? 'rows (Views with borderRadius)' : 'plain Text'}
+            Panel content: {rows ? 'rows (child Views)' : 'plain Text'}
           </Text>
         </Pressable>
         <Pressable style={styles.outline} onPress={() => setBoxMounted(value => !value)}>
@@ -44,7 +44,6 @@ export default function App() {
   );
 }
 
-/** A GlassView whose ancestor's opacity animates from 0 to 1, or stays at 1. */
 function Panel({ fade, rows, onClose }: { fade: boolean; rows: boolean; onClose: () => void }) {
   const lines = [
     `${fade ? 'Faded in' : 'No fade'}, ${rows ? 'rows' : 'plain Text'}`,
